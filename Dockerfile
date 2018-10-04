@@ -4,11 +4,8 @@ LABEL Vendor="CentOS" \
       License=GPLv2 \
       Version=2.4.6-40
 
-
 RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y --setopt=tsflags=nodocs install httpd && \
     yum clean all
-
-EXPOSE 80:80
 
 ADD utkarsh.html /var/www/html/
